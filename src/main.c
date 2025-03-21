@@ -26,14 +26,11 @@ int main()
         while(!(TIM2->SR & TIM_SR_CC2IF)) // Wait while CC1 flag is low
         {
             // Do nothing
-            // printf("%ld\r\n",TIM2->CNT/SystemCoreClock);
+            printf("%ld\r\n",TIM2->CNT);
         }
         
         // Print the results
         currentTimestamp = TIM2->CCR2;
-        duration = (currentTimestamp-oldTimestamp);
-        printf("Duration (ticks): %d\r\n",duration);
-        oldTimestamp = currentTimestamp;
 
     }
 }
